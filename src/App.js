@@ -1,13 +1,134 @@
 import React, { useState } from "react";
 import './App.css';
 
+// Wald
+import Wald from './assets/Wald.png';
+import Wald_4 from './assets/Wald_active_4.png';
+import Wald_5 from './assets/Wald_active_5.png';
+import Wald_6 from './assets/Wald_active_6.png';
+import Wald_7 from './assets/Wald_active_7.png';
+
+// Feld
+import Feld from './assets/Feld.png';
+import Feld_4 from './assets/Feld_active_4.png';
+import Feld_5 from './assets/Feld_active_5.png';
+import Feld_6 from './assets/Feld_active_6.png';
+import Feld_7 from './assets/Feld_active_7.png';
+
+// Dorf
+import Dorf from './assets/Dorf.png';
+import Dorf_4 from './assets/Dorf_active_4.png';
+import Dorf_5 from './assets/Dorf_active_5.png';
+import Dorf_6 from './assets/Dorf_active_6.png';
+import Dorf_7 from './assets/Dorf_active_7.png';
+
+// Schiene
+import Schiene from './assets/Schiene.png';
+import Schiene_4 from './assets/Schiene_active_4.png';
+import Schiene_5 from './assets/Schiene_active_5.png';
+import Schiene_6 from './assets/Schiene_active_6.png';
+
+// Fluss
+import Fluss from './assets/Fluss.png';
+import Fluss_4 from './assets/Fluss_active_4.png';
+import Fluss_5 from './assets/Fluss_active_5.png';
+import Fluss_6 from './assets/Fluss_active_6.png';
+
+// Wald done
+import Wald_done_4 from './assets/Wald_done_4.png';
+import Wald_done_5 from './assets/Wald_done_5.png';
+import Wald_done_6 from './assets/Wald_done_6.png';
+import Wald_done_7 from './assets/Wald_done_7.png';
+
+// Feld done
+import Feld_done_4 from './assets/Feld_done_4.png';
+import Feld_done_5 from './assets/Feld_done_5.png';
+import Feld_done_6 from './assets/Feld_done_6.png';
+import Feld_done_7 from './assets/Feld_done_7.png';
+
+// Dorf done
+import Dorf_done_4 from './assets/Dorf_done_4.png';
+import Dorf_done_5 from './assets/Dorf_done_5.png';
+import Dorf_done_6 from './assets/Dorf_done_6.png';
+import Dorf_done_7 from './assets/Dorf_done_7.png';
+
+// Schiene done
+import Schiene_done_4 from './assets/Schiene_done_4.png';
+import Schiene_done_5 from './assets/Schiene_done_5.png';
+import Schiene_done_6 from './assets/Schiene_done_6.png';
+
+// Fluss done
+import Fluss_done_4 from './assets/Fluss_done_4.png';
+import Fluss_done_5 from './assets/Fluss_done_5.png';
+import Fluss_done_6 from './assets/Fluss_done_6.png';
+
+
+const imageMap = {
+  Wald: {
+    4: Wald_4,
+    5: Wald_5,
+    6: Wald_6,
+    7: Wald_7,
+    done: {
+      4: Wald_done_4,
+      5: Wald_done_5,
+      6: Wald_done_6,
+      7: Wald_done_7,
+    }
+  },
+  Feld: {
+    4: Feld_4,
+    5: Feld_5,
+    6: Feld_6,
+    7: Feld_7,
+    done: {
+      4: Feld_done_4,
+      5: Feld_done_5,
+      6: Feld_done_6,
+      7: Feld_done_7,
+    }
+  },
+  Dorf: {
+    4: Dorf_4,
+    5: Dorf_5,
+    6: Dorf_6,
+    7: Dorf_7,
+    done: {
+      4: Dorf_done_4,
+      5: Dorf_done_5,
+      6: Dorf_done_6,
+      7: Dorf_done_7,
+    }
+  },
+  Schiene: {
+    4: Schiene_4,
+    5: Schiene_5,
+    6: Schiene_6,
+    done: {
+      4: Schiene_done_4,
+      5: Schiene_done_5,
+      6: Schiene_done_6,
+    }
+  },
+  Fluss: {
+    4: Fluss_4,
+    5: Fluss_5,
+    6: Fluss_6,
+    done: {
+      4: Fluss_done_4,
+      5: Fluss_done_5,
+      6: Fluss_done_6,
+    }
+  }
+};
+
 // Category setup
 const categories = [
-  { key: "wald", label: "Wald", color: "#228B22", light: "#7fc97f" },
-  { key: "feld", label: "Feld", color: "#FFD700", light: "#ffe884" },
-  { key: "dorf", label: "Dorf", color: "#B22222", light: "#f4a582" },
-  { key: "schiene", label: "Schiene", color: "#8B4513", light: "#e5c494" },
-  { key: "fluss", label: "Fluss", color: "#1E90FF", light: "#80b1d3" }
+  { key: "wald", label: "Wald", color: "#97b461", light: "#c6dcaa" },
+  { key: "feld", label: "Feld", color: "#fcc02f", light: "#ffe68d" },
+  { key: "dorf", label: "Dorf", color: "#bf5f56", light: "#e4a39d" },
+  { key: "schiene", label: "Schiene", color: "#7e5842", light: "#b79d8b" },
+  { key: "fluss", label: "Fluss", color: "#85cdd2", light: "#c1e5e7" }
 ];
 
 // Tasks for each category
@@ -17,6 +138,15 @@ const tasksData = {
   dorf:   [4,4,5,5,6,6,7],
   schiene:[4,4,5,5,6,6],
   fluss:  [4,4,5,5,6,6]
+};
+
+// Images for Task Buttons
+const getTaskImagePath = (category, value, state) => {
+  if (state === 0 || state === 1) {
+    return `/pics/${category}_active_${value}.png`;
+  } else {
+    return `/pics/${category}.png`;
+  }
 };
 
 // Extra point input fields (page 2)
@@ -45,25 +175,42 @@ const freigespieltFields = [
 // Baustelle allowed values
 const baustelleOptions = [0, 7, 14, 21];
 
-function TaskButton({ value, state, color, light, onClick }) {
-  const bg = state === 0 ? "#eee" : state === 1 ? light : color;
-  const border = `2.5px solid ${color}`;
+function TaskButton({ value, state, onClick, catLabel }) {
+  const category = catLabel.charAt(0).toUpperCase() + catLabel.slice(1);
+  let imgSrc = "";
+
+  if (state === 0 || state === 1) {
+    imgSrc = imageMap[category]?.[value];
+  } else if (state === 2 || state === 3) {
+    imgSrc = imageMap[category]?.done?.[value];
+  }
+
   const style = {
-    width: 46, height: 46, margin: 4,
-    display: "flex", alignItems: "center", justifyContent: "center",
-    fontWeight: "bold", fontSize: 19,
-    position: "relative", borderRadius: 8,
-    background: bg, border, color: "#222", opacity: state === 0 ? 0.4 : 1,
-    cursor: "pointer", boxShadow: state !== 0 ? `0 0 5px ${color}` : "none",
-    transition: "background 0.2s"
+    width: 64,
+    height: 64,
+    margin: 4,
+    position: "relative",
+    cursor: "pointer",
+    opacity: state === 0 ? 0.4 : 1,
   };
+
   return (
-    <div style={style} onClick={onClick} title={state === 2 ? "Doppelt" : undefined}>
-      {value}
-      {state === 2 && (
+    <div style={style} onClick={onClick}>
+      <img
+        src={imgSrc}
+        alt={`${category}-${value}`}
+        style={{ width: "100%", height: "100%", borderRadius: 8 }}
+      />
+      {state === 3 && (
         <span style={{
-          position: "absolute", right: 2, bottom: 2, fontSize: 13,
-          color: "#fff", background: "#444", borderRadius: 4, padding: "0 3px"
+          position: "absolute",
+          right: 2,
+          bottom: 2,
+          fontSize: 20,
+          color: "#fff",
+          background: "#444",
+          borderRadius: 4,
+          padding: "0 3px"
         }}>×2</span>
       )}
     </div>
@@ -81,6 +228,7 @@ function evenInput(value, max) {
 }
 
 function App() {
+
   const [page, setPage] = useState(1);
 
   const [taskStates, setTaskStates] = useState(() => {
@@ -103,10 +251,27 @@ function App() {
   const getTaskValue = (cat, idx) => tasksData[cat][idx];
 
   const handleTaskClick = (cat, idx) => {
-    setTaskStates(prev => ({
-      ...prev,
-      [cat]: prev[cat].map((s, i) => i === idx ? (s+1)%3 : s)
-    }));
+    setTaskStates(prev => {
+      const currentState = prev[cat][idx];
+      const nextState = (currentState + 1) % 4;
+  
+      // Count all tasks in state 1
+      let active1Count = 0;
+      for (let c in prev) {
+        active1Count += prev[c].filter(s => s === 1).length;
+      }
+  
+      // If trying to go into state 1 and already 3 exist — block it
+      if (nextState === 1 && active1Count >= 3) {
+        return prev; // No change
+      }
+  
+      // Otherwise apply state change
+      return {
+        ...prev,
+        [cat]: prev[cat].map((s, i) => i === idx ? nextState : s)
+      };
+    });
   };
 
   const handleExtraChange = (e, key, max) => {
@@ -137,8 +302,11 @@ function App() {
     categories.forEach(cat => {
       let normal = 0, double = 0;
       taskStates[cat.key].forEach((state, idx) => {
-        if (state === 1) normal += getTaskValue(cat.key, idx);
-        if (state === 2) { normal += getTaskValue(cat.key, idx); double += getTaskValue(cat.key, idx); }
+        if (state === 2) normal += getTaskValue(cat.key, idx);
+        if (state === 3) { 
+          normal += getTaskValue(cat.key, idx); 
+          double += getTaskValue(cat.key, idx); 
+        }
       });
       auftraege[cat.key] = { normal, double };
     });
@@ -203,19 +371,17 @@ function App() {
             key={cat.key}
             style={{
               textAlign: "center",
-              minWidth: cellWidth,
               width: cellWidth,
               padding: 0
             }}
           >
             {tasksData[cat.key][row] !== undefined ? (
               <TaskButton
-                value={tasksData[cat.key][row]}
-                color={cat.color}
-                light={cat.light}
-                state={taskStates[cat.key][row]}
-                onClick={() => handleTaskClick(cat.key, row)}
-              />
+              value={tasksData[cat.key][row]}
+              state={taskStates[cat.key][row]}
+              onClick={() => handleTaskClick(cat.key, row)}
+              catLabel={cat.label}
+            />
             ) : null}
           </td>
         ))}
@@ -226,15 +392,15 @@ function App() {
   // Page 1: Task grid
   if (page === 1)
     return (
-      <div style={{ padding: 24, maxWidth: 500, margin: "auto" }}>
-        <h1>Dorfromantik – Aufgaben Zähler - V 2.0</h1>
-        <h2>Aufträge</h2>
+      <div style={{ padding: 24, maxWidth: 500, margin: "auto"}}>
+        <h1 style={{ textAlign: 'center'}}>Dorfromantik – Scoreboard</h1>
         <table
           style={{
             borderCollapse: "collapse",
             marginBottom: 24,
-            marginLeft: "auto",
-            marginRight: "auto"
+            marginLeft: "autstyle={{ textAlign: 'center' }}o",
+            marginRight: "auto",
+            tableLayout: "fixed",
           }}
         >
           <thead>
@@ -247,8 +413,8 @@ function App() {
                     color: cat.color,
                     fontSize: 18,
                     fontWeight: 700,
+                    textalign: "center",
                     paddingBottom: 6,
-                    minWidth: cellWidth,
                     width: cellWidth,
                     textAlign: "center"
                   }}
@@ -260,9 +426,6 @@ function App() {
           </thead>
           <tbody>{taskRows}</tbody>
         </table>
-        <div style={{ fontSize: 13, color: "#888", marginBottom: 22 }}>
-          Klicke Aufgaben: 1x für aktiv, 2x für doppelt, 3x für aus.
-        </div>
         <button onClick={handleSubmitTasks} style={{
    marginRight:16}}>
           Weiter
@@ -273,6 +436,7 @@ function App() {
         </button>
       </div>
     );
+
 
   // Page 2: Extras
   if (page === 2) return (
@@ -385,5 +549,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
