@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/dorfromantik-score-helper/static/css/main.72442235.css",
+    "main.js": "/dorfromantik-score-helper/static/js/main.cee02b29.js",
+    "static/js/453.f154e94f.chunk.js": "/dorfromantik-score-helper/static/js/453.f154e94f.chunk.js",
+    "index.html": "/dorfromantik-score-helper/index.html",
+    "main.72442235.css.map": "/dorfromantik-score-helper/static/css/main.72442235.css.map",
+    "main.cee02b29.js.map": "/dorfromantik-score-helper/static/js/main.cee02b29.js.map",
+    "453.f154e94f.chunk.js.map": "/dorfromantik-score-helper/static/js/453.f154e94f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.72442235.css",
+    "static/js/main.cee02b29.js"
+  ]
+}
