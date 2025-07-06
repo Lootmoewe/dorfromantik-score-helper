@@ -393,7 +393,7 @@ function App() {
   if (page === 1)
     return (
       <div style={{ padding: 24, maxWidth: 500, margin: "auto"}}>
-        <h1 style={{ textAlign: 'center'}}>Dorfromantik – Scoreboard</h1>
+        <h1 style={{ textAlign: 'center'}}>Dorfromantik – Scoreboard V2</h1>
         <table
           style={{
             borderCollapse: "collapse",
