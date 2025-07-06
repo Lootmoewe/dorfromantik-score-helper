@@ -1,6 +1,6 @@
 {
-  "homepage": "https://Lootmoewe.github.io/Dorfromantik_Scoreboard",
-  "name": "dorfromantik_scoreboard",
+  "homepage": "https://Lootmoewe.github.io/dorfromantik-score-helper",
+  "name": "dorfromantik-score-helper",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

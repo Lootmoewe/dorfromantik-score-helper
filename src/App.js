@@ -227,7 +227,7 @@ function App() {
   if (page === 1)
     return (
       <div style={{ padding: 24, maxWidth: 500, margin: "auto" }}>
-        <h1>Dorfromantik – Aufgaben Zähler - V 2.2</h1>
+        <h1>Dorfromantik – Aufgaben Zähler - V 2.0</h1>
         <h2>Aufträge</h2>
         <table
           style={{
