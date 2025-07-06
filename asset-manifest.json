@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Dorfromantik_Scoreboard/static/css/main.72442235.css",
-    "main.js": "/Dorfromantik_Scoreboard/static/js/main.c9ab819e.js",
-    "static/js/453.24556ad2.chunk.js": "/Dorfromantik_Scoreboard/static/js/453.24556ad2.chunk.js",
-    "index.html": "/Dorfromantik_Scoreboard/index.html",
-    "main.72442235.css.map": "/Dorfromantik_Scoreboard/static/css/main.72442235.css.map",
-    "main.c9ab819e.js.map": "/Dorfromantik_Scoreboard/static/js/main.c9ab819e.js.map",
-    "453.24556ad2.chunk.js.map": "/Dorfromantik_Scoreboard/static/js/453.24556ad2.chunk.js.map"
+    "main.css": "/dorfromantik-score-helper/static/css/main.72442235.css",
+    "main.js": "/dorfromantik-score-helper/static/js/main.453c2510.js",
+    "static/js/453.24556ad2.chunk.js": "/dorfromantik-score-helper/static/js/453.24556ad2.chunk.js",
+    "index.html": "/dorfromantik-score-helper/index.html",
+    "main.72442235.css.map": "/dorfromantik-score-helper/static/css/main.72442235.css.map",
+    "main.453c2510.js.map": "/dorfromantik-score-helper/static/js/main.453c2510.js.map",
+    "453.24556ad2.chunk.js.map": "/dorfromantik-score-helper/static/js/453.24556ad2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.72442235.css",
-    "static/js/main.c9ab819e.js"
+    "static/js/main.453c2510.js"
   ]
 }
